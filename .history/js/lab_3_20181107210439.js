@@ -5,7 +5,7 @@
 // xhr.send();
 
 
-function getJson(url) {
+function getJso(url) {
     return new Promise(function (resolve, reject){
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = handleResponse;
@@ -41,13 +41,7 @@ function generateUnorderedList(listItems){
 
 function addUsersToPage(users) {
    
-    document.getElementById('users').innerHTML = users;
+    document.getElementById('users').innerHTML = 
+      generateUnorderedList(generateListItem(users));
 }
 
-getJson('http://jsonplaceholder.typicode.com/users')
-.then(generateListItem)
-.then(generateUnorderedList)
-.then(addUsersToPage)
-.catch(function(err){
-    console.log(err)
-})

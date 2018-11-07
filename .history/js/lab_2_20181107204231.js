@@ -45,3 +45,8 @@ p1.then(function (text) {
     out('Complete')
 })
 
+var test =  Promise.all(
+    p1,p2,p3
+)
+
+test()

@@ -45,3 +45,10 @@ p1.then(function (text) {
     out('Complete')
 })
 
+var test = new Promise.all(
+    p1,p2,p3
+).then(function(text){
+    out(text);
+})
+
+test()

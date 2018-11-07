@@ -34,14 +34,13 @@ let p1 = getFile('file1');
 let p2 = getFile('file2');
 let p3 = getFile('file3');
 
-p1.then(function (text) {
+p1.then(function(text){
     out(text);
     return p2;
-}).then(function (text) {
+}).then(function(text){
     out(text);
     return p3;
-}).then(function (text) {
+}).then(function(text){
     out(text);
     out('Complete')
 })
-

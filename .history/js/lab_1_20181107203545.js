@@ -12,11 +12,10 @@ function getFile(url){
 
     return function(cb) {
         if(text) {
-            cb(text);
+            ob(text);
             fn = cb;
             console.log(cb)
         }
-        console.log(cb, text)
     }
 }
 

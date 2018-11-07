@@ -1,11 +1,11 @@
 
-// var xhr = new XMLHttpRequest();
-// xhr.open('GET', 'http://jsonplaceholder.typicode.com/users');
-// xhr.onreadystatechange = handleResponse;
-// xhr.send();
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'http://jsonplaceholder.typicode.com/users');
+xhr.onreadystatechange = handleResponse;
+xhr.send();
 
 
-function getJson(url) {
+function getJso(url) {
     return new Promise(function (resolve, reject){
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = handleResponse;
@@ -16,11 +16,8 @@ function getJson(url) {
 
         function handleResponse() {
             if (xhr.readyState == 4 ) {
-                if (xhr.status == 200) {
-                    resolve(JSON.parse(xhr.response))
-                } else {
-                    reject(this.statusText);
-                }
+                var users = JSON.parse(xhr.response);
+                addUsersToPage(users);
             }
         }
     })
@@ -41,13 +38,7 @@ function generateUnorderedList(listItems){
 
 function addUsersToPage(users) {
    
-    document.getElementById('users').innerHTML = users;
+    document.getElementById('users').innerHTML = 
+      generateUnorderedList(generateListItem(users));
 }
 
-getJson('http://jsonplaceholder.typicode.com/users')
-.then(generateListItem)
-.then(generateUnorderedList)
-.then(addUsersToPage)
-.catch(function(err){
-    console.log(err)
-})

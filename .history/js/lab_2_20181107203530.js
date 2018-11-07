@@ -44,4 +44,3 @@ p1.then(function (text) {
     out(text);
     out('Complete')
 })
-

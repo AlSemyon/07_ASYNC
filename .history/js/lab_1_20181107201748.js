@@ -12,11 +12,10 @@ function getFile(url){
 
     return function(cb) {
         if(text) {
-            cb(text);
+            ob(text);
             fn = cb;
             console.log(cb)
         }
-        console.log(cb, text)
     }
 }
 
@@ -25,12 +24,12 @@ let th2 = getFile('file2');
 let th3 = getFile('file3');
 
 th1(function (text1) {
-    out(text1)
+    console.log(text1)
     th2(function (text2) {
-        out(text2)
+            console.log(text2)
             th3(function (text3) {
-                out(text3)
-                out("Complete")
+                console.log(text3)
+                console.log("Complete")
             })
     })
 })

@@ -42,7 +42,6 @@ function generateUnorderedList(listItems){
 function addUsersToPage(users) {
    
     document.getElementById('users').innerHTML = users;
-}
 
 getJson('http://jsonplaceholder.typicode.com/users')
 .then(generateListItem)
