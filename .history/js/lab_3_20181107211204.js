@@ -1,3 +1,10 @@
+
+// var xhr = new XMLHttpRequest();
+// xhr.open('GET', 'http://jsonplaceholder.typicode.com/users');
+// xhr.onreadystatechange = handleResponse;
+// xhr.send();
+
+
 function getJson(url) {
     return new Promise(function (resolve, reject){
         var xhr = new XMLHttpRequest();

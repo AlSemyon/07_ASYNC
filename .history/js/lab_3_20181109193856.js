@@ -38,7 +38,7 @@ function addUsersToPage(users) {
     document.getElementById('users').innerHTML = users;
 }
 
-getJson('http://jsonplaceholder.typicode.com/users')
+getJson('http://jsonplaceholder.typicode.com/users1')
 .then(generateListItem)
 .then(generateUnorderedList)
 .then(addUsersToPage)

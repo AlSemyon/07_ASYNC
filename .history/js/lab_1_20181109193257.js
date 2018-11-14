@@ -2,6 +2,7 @@ function getFile(url){
     var text, fn;
 
     fakeAjax(url, function(response) {
+        console.log(fn, response);
         if (fn) {
             fn(response);
         } else {
@@ -14,6 +15,7 @@ function getFile(url){
             cb(text);
         }
         fn = cb;
+        console.log(cb, text)
     }
 }
 

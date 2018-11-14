@@ -15,25 +15,6 @@ async function showUser(user) {
 
 showUser('defunkt')
 .then(user => console.log(user.name))
-.catch(err => console.error(err.message))
-
-
-async function (user) {
-    try {
-        const user = await showUser()
-    } catch (err) {
-        console.error(err.message)
-    }
-}
-
-
-
-async function (user) {
-    const [test1, test2] = await Promise.all([
-        showUser(),
-        showUser()
-    ])
-}
 /* fetch(url)
 .then(response => response.json())
 .then(data => console.log(data))
